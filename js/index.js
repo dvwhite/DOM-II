@@ -100,6 +100,7 @@ navContainer.addEventListener('mouseleave', mouseLeave, false);
 
 const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(navLink => boldNav(navLink));
+navLinks.forEach(navLink => preventDefaultNav(navLink));
 
 // mousedown and mouseup events
 const introImg = document.querySelector('.intro img');
