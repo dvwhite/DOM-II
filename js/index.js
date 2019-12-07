@@ -118,3 +118,8 @@ bodyTag.addEventListener('click', function() {
     console.log('The page has been clicked!');
 }, false)
 
+// Resize
+window.addEventListener('resize', function() {
+    bodyTag.style.backgroundColor = 'aliceblue'
+});
+
