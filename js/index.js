@@ -19,6 +19,13 @@ function boldNav(navItem) {
     }, false);
 }
 
+function preventDefaultNav(navItem) {
+    navItem.href = 'https://www.google.com';
+    navItem.addEventListener('click', function(event) {
+        event.preventDefault();
+    });
+}
+
 /*
 * Style elements on mouseover
 * @returns: none
@@ -65,6 +72,7 @@ function mouseUp() {
 function colorTextOnDblClick(element, color) {
     element.addEventListener('dblclick', function() {
         element.style.color = color;
+        console.log('Double click!')
     });
 }
 
@@ -74,9 +82,12 @@ function colorTextOnDblClick(element, color) {
 * @returns: none
 */
 function resetColorOnClick(element, color) {
-    element.addEventListener('click', function() {
+    element.addEventListener('click', function(event) {
         element.style.color = color;
+        console.log('Click!');
+        event.stopPropagation();
     });
+
 }
 
 // Add event listeners
@@ -99,3 +110,10 @@ introImg.addEventListener('mouseup', mouseUp, false);
 const pTags = document.querySelectorAll('.container p');
 pTags.forEach(tag => colorTextOnDblClick(tag, 'darkgoldenrod'));
 pTags.forEach(tag => resetColorOnClick(tag, 'black'));
+
+// For testing stopPropogation with nested click events
+const bodyTag = document.querySelector('body');
+bodyTag.addEventListener('click', function() {
+    console.log('The page has been clicked!');
+}, false)
+
