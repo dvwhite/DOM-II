@@ -118,8 +118,27 @@ bodyTag.addEventListener('click', function() {
     console.log('The page has been clicked!');
 }, false)
 
+let counter = 1;
+introImg.addEventListener('mousemove', function() {
+    counter += 0.01;
+    introImg.style.transform = `scale(${counter})`; 
+});
+
+introImg.addEventListener('keyup', function(event) {
+    introImg.style.transform = 'scale(1.0)';
+})
+
 // Resize
 window.addEventListener('resize', function() {
     bodyTag.style.backgroundColor = 'aliceblue'
 });
 
+// Pageshow
+window.addEventListener('pageshow', function() {
+    alert('The page is showing!');
+})
+
+// Load
+window.addEventListener('load', function() {
+    alert('The page has loaded!');
+})
