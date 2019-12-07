@@ -118,15 +118,20 @@ bodyTag.addEventListener('click', function() {
     console.log('The page has been clicked!');
 }, false)
 
+// Mousemove event listener
 let counter = 1;
 introImg.addEventListener('mousemove', function() {
-    counter += 0.01;
+    counter += 0.001;
     introImg.style.transform = `scale(${counter})`; 
 });
 
-introImg.addEventListener('keyup', function(event) {
-    introImg.style.transform = 'scale(1.0)';
-})
+// Reset the hero image scale when you hit the escape key
+const escapeKeyCode = 27;
+window.addEventListener('keyup', function(event) {
+    if (event.keyCode === escapeKeyCode) {
+        introImg.style.transform = 'scale(1.0)';
+    }
+});
 
 // Resize
 window.addEventListener('resize', function() {
