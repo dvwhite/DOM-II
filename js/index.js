@@ -30,7 +30,7 @@ function preventDefaultNav(navItem) {
 * Style elements on mouseover
 * @returns: none
 */
-function mouseOver(){
+function navMouseOver(){
     navContainer.style.backgroundColor = '#FFEBCD';
     navContainer.style.borderBottom = '2px dashed darkgoldenrod';
     navContainer.style.transition = 'all 0.3s ease';
@@ -40,7 +40,7 @@ function mouseOver(){
 * Style elements on mouseleave
 * @returns: none
 */
-function mouseLeave(){
+function navMouseLeave(){
     navContainer.style.backgroundColor = '#FFFFFF';
     navContainer.style.borderBottom = '2px dashed #C0C0C0';
     navContainer.style.transition = 'all 0.3s ease';
@@ -53,7 +53,6 @@ function mouseLeave(){
 function mouseDown() {
     introImg.style.transform = 'scale(1.1)';
 }
-
 
 /*
 * Style elements on mouseup
@@ -87,16 +86,16 @@ function resetColorOnClick(element, color) {
         console.log('Click!');
         event.stopPropagation();
     });
-
 }
+
 
 // Mouse events
 
 // Add mouseover and mouseleave even listeners to elements in the nav
 const navContainer = document.querySelector('.main-navigation');
 navContainer.style.zIndex = '1';
-navContainer.addEventListener('mouseover', mouseOver, false);
-navContainer.addEventListener('mouseleave', mouseLeave, false);
+navContainer.addEventListener('mouseover', navMouseOver, false);
+navContainer.addEventListener('mouseleave', navMouseLeave, false);
 
 const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(navLink => boldNav(navLink));
@@ -121,7 +120,7 @@ bodyTag.addEventListener('click', function() {
 // Mousemove event listener
 let counter = 1;
 introImg.addEventListener('mousemove', function() {
-    counter += 0.001;
+    counter += 0.005;
     introImg.style.transform = `scale(${counter})`; 
 });
 
@@ -131,6 +130,7 @@ introImg.addEventListener('mousemove', function() {
 const escapeKeyCode = 27;
 window.addEventListener('keyup', function(event) {
     if (event.keyCode === escapeKeyCode) {
+        counter = 1;
         introImg.style.transform = 'scale(1.0)';
     }
 });
