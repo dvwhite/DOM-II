@@ -8,10 +8,14 @@
 function boldNav(navItem) {
     navItem.addEventListener('mouseover', function() {
         navItem.style.fontWeight = 'bold';
+        navItem.style.transform = 'scale(1.1)';
+        navItem.style.transition = 'all 0.3s ease';
     }, false);
 
     navItem.addEventListener('mouseleave', function() {
         navItem.style.fontWeight = 'normal';
+        navItem.style.transform = 'scale(1.0)';
+        navItem.style.transition = 'all 0.3s ease';
     }, false);
 }
 
