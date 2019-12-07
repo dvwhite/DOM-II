@@ -26,10 +26,14 @@ const navContainer = document.querySelector('.main-navigation');
 
 navContainer.addEventListener('mouseover', function(){
     navContainer.style.backgroundColor = '#FFEBCD';
+    navContainer.style.borderBottom = '2px dashed darkgoldenrod';
+    navContainer.style.transition = 'all 0.3s ease';
 }, false);
 
 navContainer.addEventListener('mouseleave', function(){
     navContainer.style.backgroundColor = '#FFFFFF';
+    navContainer.style.borderBottom = '2px dashed #C0C0C0';
+    navContainer.style.transition = 'all 0.3s ease';
 }, false);
 
 const navLinks = document.querySelectorAll('nav a');
