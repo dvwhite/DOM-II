@@ -90,7 +90,7 @@ function resetColorOnClick(element, color) {
 
 }
 
-// Add event listeners
+// Mouse events
 
 // Add mouseover and mouseleave even listeners to elements in the nav
 const navContainer = document.querySelector('.main-navigation');
@@ -124,6 +124,8 @@ introImg.addEventListener('mousemove', function() {
     counter += 0.001;
     introImg.style.transform = `scale(${counter})`; 
 });
+
+// Window events
 
 // Reset the hero image scale when you hit the escape key
 const escapeKeyCode = 27;
