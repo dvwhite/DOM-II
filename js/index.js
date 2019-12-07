@@ -1,4 +1,10 @@
 // Helper functions
+
+/*
+* Add a mouseover and mouseleave event for the nav item passed in
+* @param {object} navItem: The nav item to add event listeners to
+* @returns: none
+*/
 function boldNav(navItem) {
     navItem.addEventListener('mouseover', function() {
         navItem.style.fontWeight = 'bold';
@@ -11,7 +17,7 @@ function boldNav(navItem) {
 
 // Add event listeners
 
-// mouseover and mouseleave for the nav
+// Add mouseover and mouseleave even listeners to elements in the nav
 const navContainer = document.querySelector('.main-navigation');
 
 navContainer.addEventListener('mouseover', function(){
@@ -24,3 +30,5 @@ navContainer.addEventListener('mouseleave', function(){
 
 const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(navLink => boldNav(navLink));
+
+// 
