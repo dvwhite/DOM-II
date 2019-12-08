@@ -155,7 +155,7 @@ window.addEventListener('load', function() {
 })
 
 // Stretch: Animate logo
-gsap.from(".logo-heading", {duration: 4, x: 900, opacity: 0, scale: 0.5});
+gsap.from(".logo-heading", {duration: 4, x: 900, opacity: 0, scale: 0.25});
 const navItems = getNavItems();
 let navCounter = 1;
 navItems.forEach(item => {
