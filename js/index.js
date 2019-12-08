@@ -142,10 +142,13 @@ window.addEventListener('resize', function() {
 
 // Pageshow
 window.addEventListener('pageshow', function() {
-    alert('The page is showing!');
+    //alert('The page is showing!');
 })
 
 // Load
 window.addEventListener('load', function() {
-    alert('The page has loaded!');
+    //alert('The page has loaded!');
 })
+
+// Stretch: Animate logo
+gsap.from(".logo-heading", {duration: 3, x: 300, opacity: 0, scale: 0.5});
