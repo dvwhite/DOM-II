@@ -120,7 +120,7 @@ bodyTag.addEventListener('click', function() {
 // Mousemove event listener
 let counter = 1;
 introImg.addEventListener('mousemove', function() {
-    counter += 0.005;
+    counter += 0.001;
     introImg.style.transform = `scale(${counter})`; 
 });
 
@@ -151,4 +151,5 @@ window.addEventListener('load', function() {
 })
 
 // Stretch: Animate logo
-gsap.from(".logo-heading", {duration: 3, x: 300, opacity: 0, scale: 0.5});
+gsap.from(".logo-heading", {duration: 2, x: 300, opacity: 0, scale: 0.5});
+gsap.from(".nav-link", {delay: 1.5, duration: 2, x: 200, opacity: 0, scale: 0.5});
