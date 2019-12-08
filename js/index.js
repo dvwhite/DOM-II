@@ -26,6 +26,10 @@ function preventDefaultNav(navItem) {
     });
 }
 
+function getNavItems() {
+    return document.querySelectorAll('nav a')
+}
+
 /*
 * Style elements on mouseover
 * @returns: none
@@ -151,5 +155,10 @@ window.addEventListener('load', function() {
 })
 
 // Stretch: Animate logo
-gsap.from(".logo-heading", {duration: 2, x: 300, opacity: 0, scale: 0.5});
-gsap.from(".nav-link", {delay: 1.5, duration: 2, x: 200, opacity: 0, scale: 0.5});
+gsap.from(".logo-heading", {duration: 4, x: 900, opacity: 0, scale: 0.5});
+const navItems = getNavItems();
+let navCounter = 1;
+navItems.forEach(item => {
+    navCounter += 0.5;
+    gsap.from(item, {delay: navCounter, duration: 0.75, x: 200, opacity: 0, scale: 0.5});
+});
